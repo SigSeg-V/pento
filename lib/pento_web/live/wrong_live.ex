@@ -34,13 +34,13 @@ defmodule PentoWeb.WrongLive do
   def handle_event("guess", %{"number" => guess}, socket) do
     {guess, _} = Integer.parse(guess)
     val = :rand.uniform(10)
-    message = case val do
+    case val do
       ^guess -> {:noreply, assign(socket, score: socket.assigns.score + 9, message: "#{val} Correct! Play again", win: true)}
       _ -> {:noreply, assign(socket, score: socket.assigns.score - 1, message: "#{val} Wrong, try again:", win: false)}
     end
   end
 
-  def handle_params(params, _uri, socket) do
+  def handle_params(_params, _uri, socket) do
       {:noreply, assign(socket, message: "Make a guess:", win: false)}
     end
 end
