@@ -1,0 +1,116 @@
+# The directory Mix will write compiled artifacts to.
+/_build/
+
+# If you run "mix test --cover", coverage assets end up here.
+/cover/
+
+# The directory Mix downloads your dependencies sources to.
+/deps/
+
+# Where 3rd-party dependencies like ExDoc output generated docs.
+/doc/
+
+# Ignore .fetch files in case you like to edit your project deps locally.
+/.fetch
+
+# If the VM crashes, it generates a dump, let's ignore it too.
+erl_crash.dump
+
+# Also ignore archive artifacts (built via "mix archive.build").
+*.ez
+
+# Temporary files, for example, from tests.
+/tmp/
+
+# Ignore package tarball (built via "mix hex.build").
+pento-*.tar
+
+# Ignore assets that are produced by build tools.
+/priv/static/assets/
+
+# Ignore digested assets cache.
+/priv/static/cache_manifest.json
+
+# In case you use Node.js/npm, you want to ignore these.
+npm-debug.log
+/assets/node_modules/
+
+.idea/.gitignore
+.idea/misc.xml
+.idea/modules.xml
+.idea/libraries/bandit.xml
+.idea/libraries/benchee_json.xml
+.idea/libraries/benchee.xml
+.idea/libraries/bypass.xml
+.idea/libraries/castore.xml
+.idea/libraries/circular_buffer.xml
+.idea/libraries/cowboy_telemetry.xml
+.idea/libraries/cowboy.xml
+.idea/libraries/cowlib.xml
+.idea/libraries/credo.xml
+.idea/libraries/dart_sass.xml
+.idea/libraries/db_connection.xml
+.idea/libraries/decimal.xml
+.idea/libraries/dialyxir.xml
+.idea/libraries/earmark.xml
+.idea/libraries/ecto_mysql_extras.xml
+.idea/libraries/ecto_psql_extras.xml
+.idea/libraries/ecto_sql.xml
+.idea/libraries/ecto_sqlite3_extras.xml
+.idea/libraries/ecto_sqlite3.xml
+.idea/libraries/ecto.xml
+.idea/libraries/esbuild.xml
+.idea/libraries/ex_aws.xml
+.idea/libraries/ex_doc.xml
+.idea/libraries/excoveralls.xml
+.idea/libraries/expo.xml
+.idea/libraries/fast_html.xml
+.idea/libraries/file_system.xml
+.idea/libraries/finch.xml
+.idea/libraries/floki.xml
+.idea/libraries/gen_smtp.xml
+.idea/libraries/gettext.xml
+.idea/libraries/hackney.xml
+.idea/libraries/hpack.xml
+.idea/libraries/hpax.xml
+.idea/libraries/html_entities.xml
+.idea/libraries/html5ever.xml
+.idea/libraries/jason.xml
+.idea/libraries/kadabra.xml
+.idea/libraries/mail.xml
+.idea/libraries/makeup_eex.xml
+.idea/libraries/makeup_elixir.xml
+.idea/libraries/mime.xml
+.idea/libraries/mint_web_socket.xml
+.idea/libraries/mint.xml
+.idea/libraries/mox.xml
+.idea/libraries/myxql.xml
+.idea/libraries/nimble_options.xml
+.idea/libraries/nimble_pool.xml
+.idea/libraries/phoenix_ecto.xml
+.idea/libraries/phoenix_html.xml
+.idea/libraries/phoenix_live_dashboard.xml
+.idea/libraries/phoenix_live_reload.xml
+.idea/libraries/phoenix_live_view.xml
+.idea/libraries/phoenix_pubsub.xml
+.idea/libraries/phoenix_template.xml
+.idea/libraries/phoenix_view.xml
+.idea/libraries/phoenix.xml
+.idea/libraries/phx_new.xml
+.idea/libraries/plug_cowboy.xml
+.idea/libraries/plug_crypto.xml
+.idea/libraries/plug.xml
+.idea/libraries/postgrex.xml
+.idea/libraries/ranch.xml
+.idea/libraries/ssl_verify_fun.xml
+.idea/libraries/stream_data.xml
+.idea/libraries/swoosh.xml
+.idea/libraries/table.xml
+.idea/libraries/tailwind.xml
+.idea/libraries/tds.xml
+.idea/libraries/telemetry_metrics.xml
+.idea/libraries/telemetry_poller.xml
+.idea/libraries/telemetry.xml
+.idea/libraries/websock_adapter.xml
+.idea/libraries/websock.xml
+.idea/libraries/x509.xml
