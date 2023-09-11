@@ -4,6 +4,7 @@ defmodule Pento.Account.User do
 
   schema "users" do
     field :email, :string
+    field :username, :string
     field :password, :string, virtual: true, redact: true
     field :hashed_password, :string, redact: true
     field :confirmed_at, :naive_datetime
@@ -36,9 +37,19 @@ defmodule Pento.Account.User do
   """
   def registration_changeset(user, attrs, opts \\ []) do
     user
-    |> cast(attrs, [:email, :password])
+    |> cast(attrs, [:username, :email, :password])
+    |> validate_username(opts)
     |> validate_email(opts)
     |> validate_password(opts)
+  end
+
+  defp validate_username(changeset, opts) do
+    changeset
+      |> validate_required([:username])
+      |> validate_format(:username, ~r/^[a-zA-Z0-9_-]*$/, message: "must be alphanumerics, _ or - only")
+      |> validate_length(:username, [min: 4, max: 15])
+      |> maybe_validate_unique_username(opts)
+
   end
 
   defp validate_email(changeset, opts) do
@@ -87,6 +98,15 @@ defmodule Pento.Account.User do
     end
   end
 
+  defp maybe_validate_unique_username(changeset, opts) do
+    if Keyword.get(opts, :validate_username, true) do
+      changeset
+      |> unsafe_validate_unique(:username, Pento.Repo)
+      |> unique_constraint(:username)
+    else
+      changeset
+    end
+  end
   @doc """
   A user changeset for changing the email.
 

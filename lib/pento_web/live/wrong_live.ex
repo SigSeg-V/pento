@@ -1,7 +1,13 @@
 defmodule PentoWeb.WrongLive do
   use PentoWeb, :live_view
-  def mount(_params, _session, socket) do
-    {:ok, assign(socket, score: 0, message: "Make a guess: ", win: false)}
+  alias Pento.Account
+  def mount(_params, session, socket) do
+    {:ok, assign(socket,
+    score: 0,
+    message: "Make a guess: ",
+    win: false,
+    session_id: session["live_socket_id"],
+    )}
   end
 
   @spec render(any) :: Phoenix.LiveView.Rendered.t()
@@ -28,6 +34,11 @@ defmodule PentoWeb.WrongLive do
           <% end %>
         </h2>
     <% end %>
+    <br/>
+    <pre>
+      <%= @session_id %>
+      <%= @current_user.email %>
+    </pre>
     """
   end
 
